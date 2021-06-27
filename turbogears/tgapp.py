@@ -1,6 +1,6 @@
 from tg import expose, TGController, MinimalApplicationConfigurator
 from wsgiref.simple_server import make_server
-
+import os
 
 class RootController(TGController):
     @expose()
@@ -19,6 +19,7 @@ config.update_blueprint({
 
 application = config.make_wsgi_app()
 
-print("Serving on port 8000...")
-httpd = make_server('', 8000, application)
+# Grab the local machines port exposed through the %HTTP_PLATFORM_PORT% variable which is passed in as %PORT% through we.config
+platform_handler_port = int(os.environ.get('PORT'))
+httpd = make_server('0.0.0.0', platform_handler_port, application)
 httpd.serve_forever()
