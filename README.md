@@ -1,6 +1,6 @@
 # AzurePythonFrameworkWindowsOSExamples
 
-A repo housing multiple Python quickstart/"hello world" framework & libraries examples that are deployed on Azure in a Windows environment using IIS and HttpPlatformHandler. 
+A repo housing multiple Python quickstart/"hello world" framework & libraries examples that are deployed on Azure in a Windows environment using IIS and HttpPlatformHandler along with Waitress being used as a production grade WSGI server. 
 <br>
 
 - [Bottle](https://bottlepy.org/docs/dev/)
